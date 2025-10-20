@@ -70,7 +70,15 @@ export default function Scoreboard({ matchData, onReset }) {
             <div className="mb-2 font-semibold">Scoring Controls</div>
             <div className="flex flex-wrap gap-2 mb-3">
               {[0,1,2,3,4,5,6].map(n => (
-                <button key={n} className="px-3 py-2 bg-white border rounded shadow-sm hover:bg-slate-50" onClick={() => handleRuns(n)} disabled={!activeBowlerId} className={!activeBowlerId ? 'opacity-50 cursor-not-allowed px-3 py-2 bg-white border rounded shadow-sm' : 'px-3 py-2 bg-white border rounded shadow-sm hover:bg-slate-50'}>{n}</button>
+                <button
+                  key={n}
+                  className="px-3 py-2 bg-white border rounded shadow-sm hover:bg-slate-50"
+                  onClick={() => handleRuns(n)}
+                  disabled={!activeBowlerId}
+                  className={!activeBowlerId ? 'opacity-50 cursor-not-allowed px-3 py-2 bg-white border rounded shadow-sm' : 'px-3 py-2 bg-white border rounded shadow-sm hover:bg-slate-50'}
+                >
+                  {n}
+                </button>
               ))}
               <button className="px-3 py-2 border rounded" onClick={openExtras} disabled={!activeBowlerId} className={!activeBowlerId ? 'opacity-50 cursor-not-allowed px-3 py-2 border rounded' : 'px-3 py-2 border rounded'}>Extras</button>
               <button className="px-3 py-2 border rounded" onClick={openOutModal} disabled={!activeBowlerId} className={!activeBowlerId ? 'opacity-50 cursor-not-allowed px-3 py-2 border rounded' : 'px-3 py-2 border rounded'}>Out</button>
